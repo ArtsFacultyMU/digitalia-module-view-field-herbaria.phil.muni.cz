@@ -1,0 +1,5 @@
+name: 'digitalia_muni_view_field'
+type: module
+description: 'Adds custom view field.'
+package: custom
+core_version_requirement: ^10 || ^11
