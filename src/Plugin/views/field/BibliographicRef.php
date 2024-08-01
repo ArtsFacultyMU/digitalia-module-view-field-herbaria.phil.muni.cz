@@ -68,7 +68,7 @@ class BibliographicRef extends FieldPluginBase {
 
       $note = $value['note'];
       if ($note) {
-        $result .= " (" . $note . ")";
+        $result .= " " . $note;
       }
 
       $result .= "</p>";
