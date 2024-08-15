@@ -49,4 +49,22 @@ function digitalia_muni_view_field_views_data_alter(array &$data) {
       'id' => 'bibliographicrefcsv',
     ),
   );
+  $data['taxonomy_term_data']['bibliographicref'] = array(
+    'title' => t('Formated bibliographic reference'),
+    'group' => t('Taxonomy term'),
+    'field' => array(
+      'title' => t('Formated bibliographic reference'),
+      'help' => t('Digitalia muni view field'),
+      'id' => 'bibliographicref',
+    ),
+  );
+  $data['taxonomy_term_data']['taxonomybibliographicrefcsv'] = array(
+    'title' => t('Formated bibliographic reference for CSV'),
+    'group' => t('Taxonomy term'),
+    'field' => array(
+      'title' => t('Formated bibliographic reference for CSV'),
+      'help' => t('Digitalia muni view field'),
+      'id' => 'taxonomybibliographicrefcsv',
+    ),
+  );
 }

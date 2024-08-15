@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Definition of Drupal\digitalia_muni_view_field\Plugin\views\field\BibliographicRef
+ * Definition of Drupal\digitalia_muni_view_field\Plugin\views\field\TaxonomyBibliographicRefCSV
  */
 
 namespace Drupal\digitalia_muni_view_field\Plugin\views\field;
@@ -17,9 +17,9 @@ use Drupal\views\ResultRow;
  *
  * @ingroup views_field_handlers
  *
- * @ViewsField("bibliographicref")
+ * @ViewsField("taxonomybibliographicrefcsv")
  */
-class BibliographicRef extends FieldPluginBase {
+class TaxonomyBibliographicRefCSV extends FieldPluginBase {
 
   /**
    * @{inheritdoc}
@@ -51,11 +51,12 @@ class BibliographicRef extends FieldPluginBase {
     $node = $this->getEntity($values);
     $items = $node->get('field_bibliography')->getValue();
 
-    $urlregex = "(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})";
     $result = "";
 
     foreach ($items as $value) {
-      $result .= "<p>";
+      if ($result != "") {
+        $result .= " | ";
+      }
 
       $item = $value['reference'];
       if ($item) {
@@ -64,20 +65,14 @@ class BibliographicRef extends FieldPluginBase {
         } else {
           $ref = Node::load($item->id());
         }
-        // removes <p> </p> from bibliographic reference
-        $result .= preg_replace('~</?p[^>]*>~', '', $ref->field_citation->processed);
+        $result .= "'" . $ref->field_citation->processed . "'";
       }
 
       $note = $value['note'];
       if ($note) {
-        // detects if contains url and adds html tags, link opens in new window
-        $result .= " " . preg_replace_callback($urlregex, function($matches) {
-          $url = $matches[0];
-          return '<a href="' . $url . '" target="_blank">' . $url . '</a>';
-        }, $note);
+        $result .= " " . $note . "";
       }
 
-      $result .= "</p>";
     }
     return $this->t($result);
   }

@@ -70,7 +70,7 @@ class BibliographicRefCSV extends FieldPluginBase {
 
       $note = $value['note'];
       if ($note) {
-        $result .= " (" . $note . ")";
+        $result .= " " . $note;
       }
 
     }
