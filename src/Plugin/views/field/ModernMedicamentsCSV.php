@@ -62,21 +62,27 @@ class ModernMedicamentsCSV extends FieldPluginBase {
       $plant_id = $value['plant'];
       if ($plant_id) {
         $plant = Term::load($plant_id);
-        $result .= "'" . $plant->getName() . "'";
+          if ($plant) {
+            $result .= "'" . $plant->getName() . "'";
+        }
       }
       $result .= ",";
 
       $certainty_id = $value['certainty'];
       if ($certainty_id) {
         $certainty = Term::load($certainty_id);
-        $result .= "'" . $certainty->getName() . "'";
+        if ($certainty) {
+          $result .= "'" . $certainty->getName() . "'";
+        }
       }
       $result .= ",";
 
       $user_id = $value['user'];
       if ($user_id) {
         $user = Node::load($user_id);
-        $result .= "'" . $user->getTitle() . "'";
+        if ($user) {
+          $result .= "'" . $user->getTitle() . "'";
+        }
       }
       $result .= ",";
 
