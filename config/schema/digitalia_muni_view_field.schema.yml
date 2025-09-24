@@ -1,0 +1,42 @@
+
+# Field instance.
+field.field_settings.digitalia_muni_field_glosses:
+  type: mapping
+  label: Example field settings
+  mapping:
+    bar:
+      type: string
+      label: Bar
+
+# Default value.
+field.value.digitalia_muni_field_glosses:
+  type: mapping
+  label: Default value
+  mapping:
+    language:
+      type: string
+      label: Language
+    type:
+      type: string
+      label: Type
+    gloss:
+      type: string
+      label: Gloss
+
+# Field widget.
+field.widget.settings.digitalia_muni_field_glosses:
+  type: mapping
+  label: Example widget settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
+
+# Field formatter.
+field.formatter.settings.digitalia_muni_field_glosses_default:
+  type: mapping
+  label: Example formatter settings
+  mapping:
+    foo:
+      type: string
+      label: Foo
