@@ -149,8 +149,8 @@ final class GlossesItem extends FieldItemBase {
    */
   public static function allowedTypeValues(): array {
     return [
-      'transcription' => t('Transcription'),
-      'transliteration' => t('Transliteration'),
+      'Transcription' => t('Transcription'),
+      'Transliteration' => t('Transliteration'),
     ];
   }
 

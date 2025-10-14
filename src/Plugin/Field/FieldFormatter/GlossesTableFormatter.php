@@ -23,21 +23,27 @@ final class GlossesTableFormatter extends FormatterBase {
    * {@inheritdoc}
    */
   public function viewElements(FieldItemListInterface $items, $langcode): array {
+    if ($items->isEmpty()) {
+      return [];
+    }
 
-    $header[] = '#';
-    $header[] = $this->t('Language');
-    $header[] = $this->t('Type');
+    # $header[] = '#';
+    $header[] = $this->t('Language', [], ['context' => 'Glosses']);
+    $header[] = $this->t('Type', [], ['context' => 'Glosses']);
     $header[] = $this->t('Gloss');
 
     $table = [
       '#type' => 'table',
       '#header' => $header,
+      '#cache'  => [
+        'contexts' => ['languages:language_interface', 'languages:language_content'],
+      ],
     ];
 
     foreach ($items as $delta => $item) {
       $row = [];
 
-      $row[]['#markup'] = $delta + 1;
+      # $row[]['#markup'] = $delta + 1;
 
       if ($item->language) {
         $allowed_values = GlossesItem::allowedLanguageValues();

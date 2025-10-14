@@ -56,15 +56,15 @@ final class GlossesWidget extends WidgetBase {
 
     $element['language'] = [
       '#type' => 'select',
-      '#title' => $this->t('Language'),
-      '#options' => ['' => $this->t('- None -')] + GlossesItem::allowedLanguageValues(),
+      '#title' => $this->t('Language', [], ['context' => 'Glosses']),
+      '#options' => ['' => $this->t('- None -', [], ['context' => 'Glosses'])] + GlossesItem::allowedLanguageValues(),
       '#default_value' => $items[$delta]->language ?? NULL,
     ];
 
     $element['type'] = [
       '#type' => 'select',
-      '#title' => $this->t('Type'),
-      '#options' => ['' => $this->t('- None -')] + GlossesItem::allowedTypeValues(),
+      '#title' => $this->t('Type', [], ['context' => 'Glosses']),
+      '#options' => ['' => $this->t('- None -', [], ['context' => 'Glosses'])] + GlossesItem::allowedTypeValues(),
       '#default_value' => $items[$delta]->type ?? NULL,
     ];
 

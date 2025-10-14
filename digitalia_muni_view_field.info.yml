@@ -2,4 +2,9 @@ name: 'digitalia_muni_view_field'
 type: module
 description: 'Adds custom view field.'
 package: custom
+version: 0.1
 core_version_requirement: ^10 || ^11
+
+# ---- Interface translation metadata ----
+interface translation project: digitalia_muni_view_field
+interface translation server pattern: modules/custom/digitalia_muni_view_field/translations/%project-%version.%language.po

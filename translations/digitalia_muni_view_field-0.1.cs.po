@@ -1,0 +1,55 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: digitalia_muni_view_field\n"
+"POT-Creation-Date: 2025-09-25 12:00+0000\n"
+"PO-Revision-Date: 2025-09-25 12:00+0000\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+# to import run:
+# drush locale:import cs modules/custom/digitalia_muni_view_field/translations/digitalia_muni_view_field-0.1.cs.po
+# drush cr
+
+# src/Plugin/Field/FieldWidget/GlossesWidget.php:59
+msgctxt "Glosses"
+msgid "Language"
+msgstr "Jazyk"
+
+# src/Plugin/Field/FieldWidget/GlossesWidget.php:66
+msgctxt "Glosses"
+msgid "Type"
+msgstr "Typ"
+
+# src/Plugin/Field/FieldWidget/GlossesWidget.php:73
+msgid "Gloss"
+msgstr "Glosa"
+
+# src/Plugin/Field/FieldWidget/GlossesWidget.php
+msgctxt "Glosses"
+msgid "- None -"
+msgstr "- Nevybráno -"
+
+# Language names
+msgid "Czech"
+msgstr "Čeština"
+
+msgid "Old Czech"
+msgstr "Storočeština"
+
+msgid "German"
+msgstr "Němčina"
+
+msgid "Latin"
+msgstr "Latina"
+
+msgid "Polish"
+msgstr "Polština"
+
+# Type names
+msgid "Transcription"
+msgstr "Transkripce"
+
+msgid "Transliteration"
+msgstr "Transliterace"
